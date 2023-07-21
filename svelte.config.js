@@ -5,10 +5,10 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 const config = {
   kit: {
     adapter: adapter({
-      fallback: '200.html' // may differ from host to host
+      fallback: 'index.html' // may differ from host to host
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/fuzue-site' : '',
+      base: '/fuzue-site',
     }
   },
   preprocess: vitePreprocess()
