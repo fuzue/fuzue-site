@@ -1,21 +1,20 @@
 <script lang="ts">
-	import ScrollSection from "$lib/scrollSection.svelte";
+	import ChangingLogo from "$lib/ChangingLogo.svelte";
 
-	let top = 0;
+  let changingLogo: ChangingLogo;
 
 	function manageScroll() {
-		top = window.pageYOffset;
+		if (Math.round(window.scrollY/window.innerHeight*100)%4 === 0) changingLogo.getRandomLogo();
 	}
 </script>
 
 <svelte:window on:scroll={manageScroll} />
 
-<div class="h-[200vh]">
-  <ScrollSection {top} />
-  <ScrollSection {top}>
-    <div class="h-[300vh] bg-red-400">
-      
-    </div>
-  </ScrollSection>
-  <ScrollSection {top} />
+<div class="h-[150vh]">
+  <div class="sticky h-[100vh] top-0 flex justify-center p-[20%]">
+    <ChangingLogo bind:this={changingLogo} />
+  </div>
+</div>
+<div class="h-[200vh] bg-red-500">
+  xxx
 </div>
