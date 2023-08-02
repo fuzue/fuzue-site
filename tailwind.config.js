@@ -4,5 +4,10 @@ export default {
   theme: {
     extend: {}
   },
-  plugins: []
+  plugins: [],
+  theme: {
+    fontFamily: {
+      'sans': ['Space Grotesk', 'sans-serif'],
+    },
+  }
 };
