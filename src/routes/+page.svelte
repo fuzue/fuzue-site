@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ChangingLogo from '$lib/ChangingLogo.svelte';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/types/runtime/transition';
 
 	let changingLogo: ChangingLogo;
 	let bgColors = [
@@ -29,7 +28,7 @@
 
 
 <div class="h-[150vh]">
-	<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]" transition:fade={{ duration: 200 }}>
+	<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]">
 		<ChangingLogo bind:this={changingLogo} />
 	</div>
 </div>
