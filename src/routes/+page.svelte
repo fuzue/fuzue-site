@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ChangingLogo from '$lib/ChangingLogo.svelte';
+	import { onMount } from 'svelte';
 
 	let changingLogo: ChangingLogo;
 	let bgColors = [
@@ -15,19 +16,16 @@
 		'#f4998dff'
 	];
 
+  onMount(() => manageImages())
+
 	function manageImages() {
   	setInterval(function () {
-      changingLogo.getRandomLogo(); 
+      changingLogo.getRandomLogo();
       }, 500);
-    console.log('lalalal')
-
-		/* if (Math.round(window.innerHeight*100)%4 === 0) changingLogo.getRandomLogo(); */
 	}
 
-  
 </script>
 
-<svelte:window on:load={manageImages} />
 
 <div class="h-[150vh]">
 	<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]" transition:fade={{ duration: 200 }}>
