@@ -16,7 +16,7 @@
 		if (timeStamp >= prevTimeStampColor + 1200) {
 			randomNum = Math.floor(Math.random() * 360);
 			prevTimeStampColor = timeStamp
-		}
+		} 
 		if (prevTimeStampLogo === undefined) {
 			prevTimeStampLogo = timeStamp;
 		}
