@@ -16,21 +16,23 @@
 	];
 
 	function manageImages() {
-  	setInterval(function () {
-      changingLogo.getRandomLogo(); 
-      }, 500);
-    console.log('lalalal')
+		setInterval(function () {
+			changingLogo.getRandomLogo();
+		}, 500);
+		manageImages();
+		console.log('lalala');
 
 		/* if (Math.round(window.innerHeight*100)%4 === 0) changingLogo.getRandomLogo(); */
 	}
-
-  
 </script>
 
 <svelte:window on:load={manageImages} />
 
 <div class="h-[150vh]">
-	<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]" transition:fade={{ duration: 200 }}>
+	<div
+		class="sticky h-[100vh] top-0 flex justify-center p-[10%]"
+		transition:fade={{ duration: 200 }}
+	>
 		<ChangingLogo bind:this={changingLogo} />
 	</div>
 </div>
