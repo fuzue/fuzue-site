@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ChangingLogo from '$lib/ChangingLogo.svelte';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/types/runtime/transition';
 
 	let changingLogo: ChangingLogo;
 	let bgColors = [
