@@ -8,7 +8,7 @@ const config = {
       fallback: 'index.html' // may differ from host to host
     }),
     paths: {
-      base: '/fuzue-site',
+      base: '',
     }
   },
   preprocess: vitePreprocess()
