@@ -33,6 +33,7 @@ jobs:
     - run: npm i
     - run: npm run build
     - run: cp -r build _site/
+    - run: echo "fuzue.tech" > _site/CNAME
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v2
     - name: Deploy to GitHub Pages
