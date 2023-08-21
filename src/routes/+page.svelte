@@ -3,40 +3,42 @@
 	import { onMount } from 'svelte';
 
 	let changingLogo: ChangingLogo;
-	let randomNum = Math.floor(Math.random() * 360);
+	let currentBG = `hsl(${Math.floor(Math.random() * 360)}deg, 100%, 40%)`;
+	let windowY = 0;
+	let perspective = '';
 
-	onMount(() => window.requestAnimationFrame(animate));
-
-	let prevTimeStampLogo: number, prevTimeStampColor: number;
-
-		function animate(timeStamp: number) {
-		if (prevTimeStampColor === undefined) {
-			prevTimeStampColor = timeStamp;
-		}
-		if (timeStamp >= prevTimeStampColor + 1200) {
-			randomNum = Math.floor(Math.random() * 360);
-			prevTimeStampColor = timeStamp
-		} 
-		if (prevTimeStampLogo === undefined) {
-			prevTimeStampLogo = timeStamp;
-		}
-		if (timeStamp >= prevTimeStampLogo + 500) {
-			changingLogo.getRandomLogo();
-			prevTimeStampLogo = timeStamp
-		}
-		window.requestAnimationFrame(animate);
+	function randomizeBG() {
+		return `hsl(${Math.floor(Math.random() * 360)}deg, 100%, ${
+			40 + (window.scrollY / window.innerHeight) * 60
+		}%)`;
 	}
-	
+
+	function getPerspective() {
+		const speed = (window.scrollY - windowY) * .3;
+		windowY = window.scrollY;
+		return `perspective(${window.innerHeight}px)rotateX(${speed}deg);`;
+	}
+
+	function manageScroll() {
+		if (Math.round((window.scrollY / window.innerHeight) * 100) % 4 === 0)
+			changingLogo.getRandomLogo();
+		if (Math.round((window.scrollY / window.innerHeight) * 100) % 2 === 0)
+			currentBG = randomizeBG();
+	}
+
+	function manageSpeed() {
+		perspective = getPerspective();
+		window.requestAnimationFrame(manageSpeed);
+	}
+
+	onMount(() => window.requestAnimationFrame(manageSpeed));
 </script>
 
+<svelte:window on:scroll={manageScroll} />
 
-<div class="h-[150vh]" style:background-color="hsl({randomNum}, 100%, 40%)">
+<div class="h-[150vh] -mb-[50vh]" style:background-color={currentBG}>
 	<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]">
 		<ChangingLogo bind:this={changingLogo} />
-		<div class="absolute bottom-10 text-slate-950 font-sans text center flex flex-col items-center">
-			<p class="text-3xl">fuzue@fuzue.tech</p>
-			<p class="text-xl">site coming soon</p>
-		</div>
 	</div>
 </div>
-
+<div class="h-[200vh] bg-red-500 transition-transform" style={`transform: ${perspective}`}>xxx {perspective}</div>
