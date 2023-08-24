@@ -1,22 +1,17 @@
 <script lang="ts">
-	import ChangingLogo from '$lib/ChangingLogo.svelte';
+	import Card from '$lib/Card.svelte';
+  import ChangingLogo from '$lib/ChangingLogo.svelte';
 	import { onMount } from 'svelte';
 
 	let changingLogo: ChangingLogo;
 	let currentBG = `hsl(${Math.floor(Math.random() * 360)}deg, 100%, 40%)`;
 	let windowY = 0;
-	let perspective = '';
+  let speed = 0;
 
 	function randomizeBG() {
 		return `hsl(${Math.floor(Math.random() * 360)}deg, 100%, ${
-			40 + (window.scrollY / window.innerHeight) * 60
+			40 + (window.scrollY / window.innerHeight) * 150
 		}%)`;
-	}
-
-	function getPerspective() {
-		const speed = (window.scrollY - windowY) * .3;
-		windowY = window.scrollY;
-		return `perspective(${window.innerHeight}px)rotateX(${speed}deg);`;
 	}
 
 	function manageScroll() {
@@ -27,7 +22,8 @@
 	}
 
 	function manageSpeed() {
-		perspective = getPerspective();
+		speed = (window.scrollY - windowY) * 0.3;
+    windowY = window.scrollY;
 		window.requestAnimationFrame(manageSpeed);
 	}
 
@@ -36,9 +32,13 @@
 
 <svelte:window on:scroll={manageScroll} />
 
-<div class="h-[150vh] -mb-[50vh]" style:background-color={currentBG}>
-	<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]">
-		<ChangingLogo bind:this={changingLogo} />
+<main style:background-color={currentBG}>
+	<div class="h-[150vh]">
+		<div class="sticky h-[100vh] top-0 flex justify-center p-[10%]">
+			<ChangingLogo bind:this={changingLogo} />
+		</div>
 	</div>
-</div>
-<div class="h-[200vh] bg-red-500 transition-transform" style={`transform: ${perspective}`}>xxx {perspective}</div>
+	<div class="h-[200vh] flex flex-col items-center">
+		<Card {speed} />
+	</div>
+</main>
