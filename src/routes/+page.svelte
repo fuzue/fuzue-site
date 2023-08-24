@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Card from '$lib/Card.svelte';
-  import ChangingLogo from '$lib/ChangingLogo.svelte';
+	import ChangingLogo from '$lib/ChangingLogo.svelte';
 	import { onMount } from 'svelte';
 
 	let changingLogo: ChangingLogo;
-	let currentBG = `hsl(${Math.floor(Math.random() * 360)}deg, 100%, 40%)`;
+	let currentBG = `#fff`;
 	let windowY = 0;
-  let speed = 0;
+	let speed = 0;
 
 	function randomizeBG() {
 		return `hsl(${Math.floor(Math.random() * 360)}deg, 100%, ${
@@ -23,11 +23,14 @@
 
 	function manageSpeed() {
 		speed = (window.scrollY - windowY) * 0.3;
-    windowY = window.scrollY;
+		windowY = window.scrollY;
 		window.requestAnimationFrame(manageSpeed);
 	}
 
-	onMount(() => window.requestAnimationFrame(manageSpeed));
+	onMount(() => {
+		window.requestAnimationFrame(manageSpeed);
+		currentBG = randomizeBG();
+	});
 </script>
 
 <svelte:window on:scroll={manageScroll} />
