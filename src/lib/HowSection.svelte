@@ -33,7 +33,7 @@
 
 </script>
 
-<section class="h-[200vh] flex justify-center -mb-[50vh]">
+<section class="h-[150vh] flex justify-center -mb-[50vh]">
 	<div class="sticky top-0 h-screen flex flex-col justify-center text-4xl w-96 max-w-full">
 		<div>We are</div>
 		<div class="ml-auto text-right whitespace-nowrap">{currentText}</div>
