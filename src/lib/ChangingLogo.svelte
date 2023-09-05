@@ -1,16 +1,17 @@
 <script lang="ts">
   let currentLogo = randomizeLogo();
+  export let fixed = false;
 
   function randomizeLogo() {
     return Math.floor(Math.random() * 25);
   }
 
   export function getRandomLogo() {
-    currentLogo = randomizeLogo();
+    currentLogo = fixed ? 21 : randomizeLogo();
   }
 </script>
 
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 708.18">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 708.18"  preserveAspectRatio="xMidYMid meet">
   <g name="logos">
     {#if currentLogo === 0}
     <g name="logo_0">
@@ -250,11 +251,7 @@
 </svg>
 
 <style>
-  .cls-1 {
-    fill: #00bbf1;
-  }
-
-  .cls-2 {
-    fill: #f12e9c;
-  }
+  svg { fill: currentColor; }
+  .cls-1 { fill: #00bbf1; }
+  .cls-2 { fill: #f12e9c; }
 </style>
