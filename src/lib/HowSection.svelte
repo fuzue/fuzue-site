@@ -10,7 +10,7 @@
 
 	function manageScroll() {
 		let newClaim = Math.floor(windowPercent / 0.25);
-		while (newClaim > 2) newClaim = newClaim - 3;
+		while (newClaim > claims.length - 1) newClaim = newClaim - claims.length;
     if(currentClaim !== newClaim) changeClaim(newClaim)
 	}
 
@@ -28,7 +28,6 @@
       startingFrame = frame
       currentText = claims[currentClaim].substring(0, currentText.length + 1)
     }
-    console.log(frame, startingFrame, frame - startingFrame, currentText)
     window.requestAnimationFrame(writeClaim)
   }
 

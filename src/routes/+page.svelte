@@ -8,7 +8,6 @@
 
 	function manageScroll() {
 		windowPercent = window.scrollY / window.innerHeight;
-    console.log(window.scrollY)
 	}
 
   onMount(manageScroll)

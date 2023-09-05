@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {@apply bg-zinc-950}
-section { @apply min-h-screen; }
+section { @apply min-h-screen w-screen overflow-clip; }
 svg {@apply h-full}
