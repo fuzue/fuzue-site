@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {@apply bg-zinc-950}
-section { @apply min-h-screen w-screen overflow-clip; }
+body {@apply bg-zinc-950 text-white}
+main {
+  @apply w-full h-full overflow-scroll snap-y snap-mandatory;
+}
+section {
+  @apply min-h-screen w-screen overflow-clip snap-start;
+}
 svg {@apply h-full}

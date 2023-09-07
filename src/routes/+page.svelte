@@ -1,24 +1,23 @@
 <script lang="ts">
 	import HowSection from '$lib/HowSection.svelte';
-  import LogoSection from '$lib/LogoSection.svelte';
+	import MenuBar from '$lib/MenuBar.svelte';
 	import ProjectSection from '$lib/ProjectSection.svelte';
 	import { onMount } from 'svelte';
 
-	let windowPercent = 0;
+	let main: HTMLElement;
+	let scrollPosition = 0;
 
-	function manageScroll() {
-		windowPercent = window.scrollY / window.innerHeight;
+	function getScroll() {
+		scrollPosition = main.scrollTop / window.innerHeight;
 	}
 
-  onMount(manageScroll)
+	onMount(getScroll);
 </script>
 
-<svelte:window on:scroll={manageScroll} />
-
-<main class="text-white h-[180vh]">
-  <div class="fixed right-0 top-0">{windowPercent}</div>
-	<LogoSection {windowPercent} />
-  <HowSection {windowPercent} />
-  <ProjectSection />
-  <div class="h-[300vh]"></div>
+<MenuBar {scrollPosition} />
+<main bind:this={main} on:scroll={getScroll}>
+	<section class="w-full h-[150vh]" />
+	<HowSection />
+  <ProjectSection {scrollPosition} />
+  <section />
 </main>
