@@ -2,6 +2,7 @@
 	import HowSection from '$lib/HowSection.svelte';
 	import MenuBar from '$lib/MenuBar.svelte';
 	import ProjectSection from '$lib/ProjectSection.svelte';
+	import { projects } from '$lib/data';
 	import { onMount } from 'svelte';
 
 	let main: HTMLElement;
@@ -18,6 +19,8 @@
 <main bind:this={main} on:scroll={getScroll}>
 	<section class="w-full h-[150vh]" />
 	<HowSection />
-  <ProjectSection {scrollPosition} />
+  {#each projects as project}
+  <ProjectSection {scrollPosition} {project} />
+  {/each}
   <section />
 </main>
