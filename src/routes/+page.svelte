@@ -2,6 +2,7 @@
 	import HowSection from '$lib/HowSection.svelte';
 	import MenuBar from '$lib/MenuBar.svelte';
 	import ProjectSection from '$lib/ProjectSection.svelte';
+	import UsSection from '$lib/UsSection.svelte';
 	import { projects } from '$lib/data';
 	import { onMount } from 'svelte';
 
@@ -22,5 +23,5 @@
   {#each projects as project}
   <ProjectSection {scrollPosition} {project} />
   {/each}
-  <section />
+  <UsSection {scrollPosition} />
 </main>
