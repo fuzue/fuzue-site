@@ -95,9 +95,9 @@
     "desc": "The aula app is a mobile platform that allows students to experience and learn about democratic processes. In the platform they can propose new ideas, discuss them and vote. It is currently being used in over 50 schools in Germany. For the app's backend, we used a combination of Postgresql, PostgREST, and Python. We also used Redis as the message queue and Firebase for the push notifications. On the frontend side, we implemented the UI using Vue/Vuetify.",
     "tags": "Mobile, School, Kids",
     "techs": "PostGresSQL, PostgREST, Python, Firebase, Cordova, Vue.js",
-    "video": "",
-    "bgphoto":"",
-    "photos":"",
+    "video": "https://youtu.be/4xQKckG2KDU",
+    "bgphoto":"aula-print3.png",
+    "photos":"aula-app-print1.png, aula-app-print2.png, ",
     "link": "https://play.google.com/store/apps/details?id=de.aula, https://apps.apple.com/au/app/aula-politik-digital-e-v/id1512413041"
     
   },
