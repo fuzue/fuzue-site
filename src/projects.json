@@ -1,0 +1,124 @@
+ 
+  [
+   { 
+    "title": "Circuito memoria paulistana",
+    "desc": "An online exhibit that shows many aspects of São Paulo's history that go through samba, architecture, workers history and many more while mixing diverse media languages. The goal is to create an memory archive so the history of the city remains alive.",
+    "tags": "Art, Internet",
+    "techs": "Vue3, TailwindCSS, Mapbox",
+    "video": "",
+    "bgphoto":"",
+    "photos":""
+  },
+  { 
+    "title": "Mobiliário Urbano",
+    "desc": "An interactive film that investigates the historical and current processes of displacement of traditional populations from the city center of São Paulo. In each access, the platform generates a randomly assembled storyline. The idea is to allow a different experience with every access, and with it allow a new story to be told.",
+    "tags": "Cinema, Documentary, Experimental",
+    "techs": "Vue2, Python",
+    "video": "",
+    "bgphoto":"",
+    "photos":""
+  },
+  { 
+    "title": "Máquina de Histórias",
+    "desc": "Inspired by the surrealist art technique called Exquisite Corpse, we created a story machine: an Interactive art installation in which people could collaboratively tell a story. The stories were later published on Soundcloud and a timeline interface was created to navigate through them.",
+    "tags": "Collab, Interactive, Art, Event",
+    "techs": "RaspberryPi, Arduino, Python, Javascript",
+    "video": "",
+    "bgphoto":"",
+    "photos":"https://www.flickr.com/photos/96512729@N08/with/10681179126/"
+  },
+  { 
+    "title": "Coisa Lida",
+    "desc": " Art installation created with Lucas Bambozzi, a Brazilian artist where poems were shown in FIESP building's LED façade, a landmark in São Paulo's famous 'Avenida Paulista'. The poem rhythm and distortion of its words were dictated by the flux of people passing by on the street, captured by a Kinect camera hidden on the sidewalk.",
+    "tags": "Poetry, Art, Installation, Interactive",
+    "techs": "Kinect, LED Screen on FIESP Façade, C++ (openframework), 2 LED Screens",
+    "video": "",
+    "bgphoto": "",
+    "photos": ""
+  },
+  { 
+    "title": "Mostra black",
+    "desc":"A real-time, interactive word cloud capturing the essence of 'What makes a house a home?'. Responses, gathered via an Arduino device connected to the mobile network, come alive through a dynamic 3D mapping.  ed onto walls and doors by twin  ors, the words colliding in an always changing gravity world, adds a mesmerizing dimension to the experience.",
+    "tags":"Event, Art, Mobile",
+    "techs": "Java(processing), Arduino, Two  ors",
+    "video": "",
+    "bgphoto": "http://portfolio.vaz.io/MostraBlack/",
+    "photos":"http://portfolio.vaz.io/MostraBlack/"
+  
+  },
+  { 
+    "title": "Agreste Magazine",
+    "desc": "AGRESTE, Agrupamento de Estudos Ecêntricos (Eccentric Studies Group), is an online publication aimed at promoting, debating and disseminating experimental audiovisual production, dealing critically, theoretically and in practice with present, past and future works created in any media: from present bodies to the virtual figures of the internet.",
+    "tags": "Articles, Text, Cinema, Research, Art",
+    "techs": "Javascript, Staticsite",
+    "video": "",
+    "bgphoto":"https://revistaagreste.com.br/2",
+    "photos":""
+    
+  },
+  { 
+    "title": "WanderingWondering",
+    "desc": "The Wandering Wondering  , collaboration between Edgar Zanella and Radamés Ajna, presented a video installation of machines in its intimate state of information seeking, browsing through the web following its own algorithms. The   questions what the machines are looking for and what are our own conceptual and perceptual limits that makes this question hard to respond. Are they wondering or wandering around? What is it like to be browsing like a machine?",
+    "tags": "Art, Internet, Gallery",
+    "techs": "Python",
+    "video": "",
+    "bgphoto":"http://wandering.wondering.vaz.io/, https://asmallview .wordpress.com/2016/01/24/ob_ject-and-ob_serve/, https://asmallview .wordpress.com/2016/01/24/ob_ject-and-ob_serve/",
+    "photos":" https://www.flickr.com/photos/aivuk",
+    "link": "http://wandering.wondering.vaz.io/, https://asmallview .wordpress.com/2016/01/24/ob_ject-and-ob_serve/, https://asmallview .wordpress.com/2016/01/24/ob_ject-and-ob_serve/"
+    
+  },
+   { 
+    "title": "Self-portrait of an absence",
+    "desc": "Self-portrait of an absence (2016) is a participative performance based on the partial visual impairment of the artist Graziele Lautenschlaeger, who has a blind eye. Technically, the artwork consists of an eye-tracking system programmed to generate and process sounds according to data collected from the asynchronous movements of both eyes. The artist offers passers-by in public or semi-public spaces an observing-listening aesthetic experience under an umbrella, where sound-emitting loudspeakers are hung.",
+    "tags": "Art, Computer Vision, Music, Interactive",
+    "techs": "RaspberryPi, Python, SuperCollider, OpenCV(Computer Vision)",
+    "video": "",
+    "bgphoto":"https://www.grazielelautenschlaeger.com/artworks/self-portrait-of-an-absence/",
+    "photos":"",
+    "link": "https://github.com/grazilaut/self_portrait_of_an_absence"
+    
+  },
+  { 
+    "title": "Follow the Grant",
+    "desc": "Born several years ago at a Süddeutsche Zeitung “hackathon”, the   has analised more than 4.9 million medical articles from 27,000 journals worldwide, including work by around 8.5 million authors. The   revealed that conflicts of interest are widely under reported in scientific literature and identified examples of failure to disclose conflicts of interest and showed which companies are heavily involved in research that has conflicts of interest. The   was nominated for three awards and won one them, and won two of them: European Science Journalist of the Year from the European Federation for Science Journalism (EFSJ), and Peter Hans Hofschneider Recherchepreis für Wissenschafts- und Medizinjournalismus from Stiftung Experimentelle Biomedizin.",
+    "tags": "Machine Learning, NLP, Journalism",
+    "techs": "PostGresSQL, Python, Spacy/NLTK, Aleph",
+    "video": "",
+    "bgphoto":"",
+    "photos":"followthegrant-print1.png, followthegrant-print2.png ",
+    "source-code": "https://gitlab.com/follow-the-grant",
+    "link": "https://followthegrant.org/about"
+    
+  },
+   { 
+    "title": "Aula app",
+    "desc": "The aula app is a mobile platform that allows students to experience and learn about democratic processes. In the platform they can propose new ideas, discuss them and vote. It is currently being used in over 50 schools in Germany. For the app's backend, we used a combination of Postgresql, PostgREST, and Python. We also used Redis as the message queue and Firebase for the push notifications. On the frontend side, we implemented the UI using Vue/Vuetify.",
+    "tags": "Mobile, School, Kids",
+    "techs": "PostGresSQL, PostgREST, Python, Firebase, Cordova, Vue.js",
+    "video": "",
+    "bgphoto":"",
+    "photos":"",
+    "link": "https://play.google.com/store/apps/details?id=de.aula, https://apps.apple.com/au/app/aula-politik-digital-e-v/id1512413041"
+    
+  },
+   { 
+    "title": "Agrarsubventionen in Niedersachsen - Natur bleibt auf der Strecke - NABU",
+    "desc": "",
+    "tags": "Data journalism, Investigative, Article, Collaboration",
+    "techs": "Python (data scrappers, data clean and analysis), D3.js Visualization",
+    "video": "",
+    "bgphoto":"nabu-print.png",
+    "photos":"",
+    "link": "https://www.nabu.de/natur-und-landschaft/landnutzung/landwirtschaft/agrarpolitik/eu-agrarreform/studien/24782.html"
+   },
+  { 
+    "title": "DatenmachenSchule",
+    "desc": "",
+    "tags": "Data visalization",
+    "techs": "Jekyll, Javascript",
+    "video": "",
+    "bgphoto":"https://user-images.githubusercontent.com/272892/259457818-79919b11-fc4f-49a5-a228-ecebe521efd8.png",
+    "photos":"",
+    "link": "https://datenmachenschule.de/tools/wahlergebnisportal"
+   }
+  ]
