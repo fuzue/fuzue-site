@@ -10,7 +10,6 @@
 
   function animate(frame: number) {
     if(startingFrame === 0) startingFrame = frame
-    console.log(frame - startingFrame)
     if(frame - startingFrame > frequency) changeClaim();
     window.requestAnimationFrame(animate)
   }
