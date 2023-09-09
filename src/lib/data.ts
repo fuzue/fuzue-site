@@ -1,7 +1,12 @@
 export const claims = [
-  'language agnostic',
-  'sexy',
-  'brazilian'
+  'are Brazilians',
+  'are language agnostic',
+  'are artistic',
+  'love tech',
+  'love pasta',
+  'love web',
+  'love dogs',
+  'are fuzuê',
 ]
 
 export const projects = [
