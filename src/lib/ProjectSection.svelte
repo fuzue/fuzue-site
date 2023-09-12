@@ -8,19 +8,23 @@
 	$: currentProgress, getTransform();
 
 	function getTransform() {
-		const isOut = currentProgress < 0 || currentProgress > 1;
-		if (transform === 'transform: skew(0);' && isOut)
-			transform = `
-      transform: skew(${Math.random() * 20 - 10}deg, ${Math.random() * 20 - 10}deg) scale(.75);`;
-		else if (transform !== 'transform: skew(0);' && !isOut)
-      transform = 'transform: skew(0);'
-	}
+    const isOut = currentProgress < 0 || currentProgress > 1;
+    if (transform === 'transform: skew(0);' && isOut) {
+    	transform = `transform: skew(${Math.random() * 20 - 10}deg, ${Math.random() * 20 - 10}deg) scale(.75);`;
+    } else if (!isOut) {
+        transform = 'transform: skew(0);'
+    }
+  }
 </script>
 
-<section bind:this={container} class="h-[200vh] transition-all" style={transform}>
+<section bind:this={container} class="h-[200vh]">
 	<div
-		class="sticky h-screen top-0 bg-cover flex flex-col p-14 pt-32"
-		style="background-image: url(/imgs/{project.bg}); background-opacity: .3"
+		class="sticky h-screen top-0 bg-cover flex flex-col p-14 pt-32 transition-transform"
+		style="
+      background-image: url(/imgs/{project.bg});
+      background-opacity: .3;
+      {transform}
+    "
 	>
 		<h1 class="text-4xl">
 			{project.name}
