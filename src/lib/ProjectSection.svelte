@@ -2,18 +2,16 @@
 	export let project: { name: string; bg: string };
 	export let scrollPosition: number;
 	let container: HTMLElement;
-	let transform = 'transform: skew(0);';
+	let transform: string;
+  const distortion = Math.random();
 
 	$: currentProgress = container ? scrollPosition - container.offsetTop / window.innerHeight : 0;
-	$: currentProgress, getTransform();
+	$: currentProgress, transform = getTransform(distortion, currentProgress);
 
-	function getTransform() {
-    const isOut = currentProgress < 0 || currentProgress > 1;
-    if (transform === 'transform: skew(0);' && isOut) {
-    	transform = `transform: skew(${Math.random() * 20 - 10}deg, ${Math.random() * 20 - 10}deg) scale(.75);`;
-    } else if (!isOut) {
-        transform = 'transform: skew(0);'
-    }
+	const getTransform = (distortion: number, currentProgress: number) => {
+    return currentProgress < 0 || currentProgress > 1
+      ? `transform: skew(${distortion * 10 - 5}deg, ${distortion * 10 - 5}deg) scale(.75);`
+      : 'transform: none;'
   }
 </script>
 

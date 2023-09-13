@@ -3,13 +3,13 @@
 
   export let scrollPosition: number;
 	let logo: ChangingLogo;
-  let size = 100;
+  let size: number;
 
   $: scrollPosition, manageScroll();
 
   function manageScroll() {
-    if (Math.round(scrollPosition * 100) % 4 === 0) changeLogo()
     size = setHeight()
+    if (Math.round(scrollPosition * 100) % 4 === 0) changeLogo()
   }
 
 	function changeLogo() {
